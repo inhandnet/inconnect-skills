@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Extract release notes
+        id: notes
+        run: |
+          TAG=${{ github.ref_name }}
+          if [ -f CHANGELOG.md ]; then
+            sed -n "/^## ${TAG}/,/^## v/{/^## v/!p}" CHANGELOG.md | sed '1d' > /tmp/release_notes.md
+          fi
+          if [ ! -s /tmp/release_notes.md ]; then
+            echo "Release ${TAG}" > /tmp/release_notes.md
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2.2.1
+        with:
+          body_path: /tmp/release_notes.md

@@ -1,0 +1,26 @@
+## ics server command
+
+Send a command to the VPN server of an organization
+
+```
+ics server command <oid> [flags]
+```
+
+### Options
+
+```
+      --cmd string   Command to send (e.g. hold_release)
+  -h, --help         help for command
+```
+
+### Options inherited from parent commands
+
+```
+      --context string   Config context to use
+      --debug            Enable debug output
+      --jq string        Filter JSON output using a jq expression
+      --oid string       Organization ID
+  -o, --output string    Output format: json, table, yaml (default: table for TTY, json otherwise)
+      --show-secrets     Reveal private keys in output (redacted by default)
+      --verbose int      API field verbosity for GET requests (1-100, higher = more fields; 0 to omit) (default 100)
+```

@@ -1,0 +1,8 @@
+{
+  "name": "ics",
+  "version": "0.1.0",
+  "description": "Skills for managing the InConnect (InVPN) platform via the ics CLI",
+  "author": {
+    "name": "inhandnet"
+  }
+}
