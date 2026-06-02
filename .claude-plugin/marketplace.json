@@ -1,13 +1,13 @@
 {
-  "name": "ics-skills",
+  "name": "inconnect-skills",
   "owner": {
     "name": "inhandnet"
   },
   "plugins": [
     {
-      "name": "ics",
+      "name": "inconnect",
       "source": "./",
-      "description": "Skills for managing the InConnect (InVPN) platform via the ics CLI"
+      "description": "Skills for managing the InConnect (InVPN) platform via the inconnect CLI"
     }
   ]
 }
