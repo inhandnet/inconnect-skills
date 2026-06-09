@@ -1,17 +1,23 @@
-## inconnect router web
+## inconnect router ssh
 
-Open device web management UI via ngrok tunnel
+Print an SSH command to log into a device via ngrok
+
+### Synopsis
+
+Open a TCP ngrok tunnel to the device's SSH port and print a ready-to-use
+ssh command. The ngrok server must have the embedded SSH reverse proxy
+enabled; if it isn't, the tunnel URL won't carry a tunnel-id and this command
+will fail.
 
 ```
-inconnect router web <id> [flags]
+inconnect router ssh <id> [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help            help for web
-      --no-browser      Print URL only, don't open browser
-      --port int        Device-side web port to expose (default 80)
+  -h, --help            help for ssh
+      --port int        Device-side SSH port (default 22)
       --server string   Ngrok server address (default "ngrok.j3r0lin.com:4443")
       --timeout int     Task timeout in seconds (default 60)
 ```

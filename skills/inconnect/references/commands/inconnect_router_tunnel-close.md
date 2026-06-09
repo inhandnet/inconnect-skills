@@ -1,24 +1,21 @@
-## inconnect router exec
+## inconnect router tunnel-close
 
-Run a shell command on a router remotely
+Close an ngrok tunnel opened by `router web` or `router ssh`
 
 ### Synopsis
 
-Run a shell command on a router remotely and print its output.
-
-Examples:
-  inconnect router exec <id> show log
-  inconnect router exec <id> "ifconfig eth0"
+Explicitly close an ngrok tunnel by its tunnel id (uuid), instead of
+waiting for the device-side idle timeout to reclaim it. The uuid is printed
+by the "router web" and "router ssh" commands when the tunnel is opened.
 
 ```
-inconnect router exec <id> <command>... [flags]
+inconnect router tunnel-close <uuid> [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help          help for exec
-      --timeout int   Command timeout in seconds (default 30)
+  -h, --help   help for tunnel-close
 ```
 
 ### Options inherited from parent commands
